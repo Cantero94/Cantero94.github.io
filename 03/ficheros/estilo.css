@@ -31,7 +31,7 @@ body
 header, footer{
     background: linear-gradient(90deg, rgba(197,79,255,1) 0%, rgba(92,0,157,1) 35%, rgba(255,0,254,1) 100%);
     box-sizing: border-box;
-    width: 100%;
+    width: 95%;
     font-size: clamp(7px, 1.5vw, 18px); 
     text-align: center;
     padding:2px;
