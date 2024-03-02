@@ -19,6 +19,7 @@ body
 {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-direction: column;
     background-color: black;
     background-image:url('../imagenes/background.webp');
@@ -34,7 +35,6 @@ header, footer{
     width: 95%;
     font-size: clamp(7px, 1.5vw, 18px); 
     text-align: center;
-    
     filter: drop-shadow(0px 0px 13px rgba(173,255,47,100));
     box-shadow: 0px 0px 13px rgba(173,255,47,100);
 }
@@ -51,26 +51,15 @@ footer
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 6px;
     gap: 20px;
 }
 footer button
 {
     background-color: black;
     color: greenyellow;
-    font-size: clamp(7px, 2.5vw, 18px);
     border-radius: 20px;
     padding: 15px;
-}
-.general
-{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
 }
 .centro
 {
@@ -199,7 +188,7 @@ from {
 /*************************** TAMAÑO MOVIL  ***********************************/
 /*************************** TAMAÑO MOVIL  ***********************************/
 @media (max-width: 760px) {
-    .general span, .general p, .general h2
+    .centro span, .centro p, .centro h2
     {
         font-size: clamp(16px, 4vw, 24px);
     }
