@@ -120,7 +120,7 @@ function play(usuOpcion) {
                 userScoreSpan.textContent = userScore;
                 computerScoreSpan.textContent = computerScore;
                 vsText.innerHTML = originalText;
-                }, 12000);
+                }, 6000);
             }
     }, 1000);
     
