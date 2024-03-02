@@ -162,6 +162,7 @@ button:disabled
     opacity: 60%;
     cursor: not-allowed;
     animation: paused;
+    transform: scale(0.75);
 }
 @keyframes pulso {
 from {
