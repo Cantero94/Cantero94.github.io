@@ -59,6 +59,7 @@ function endGame(winner) {
     } else if (winner === 'computer') {
         vsText.innerHTML = "Has perdido el juego.";
         lossGif.style.display = 'block';
+        document.getElementById('lossmp3').loop = true;
         document.getElementById('lossmp3').play();
     }
     disableGameButtons();
