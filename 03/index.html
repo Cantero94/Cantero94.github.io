@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store">
+    
+    <meta name="description" content="Actividad 03 | Juego de Piedra Papel o Tijeras">
+    <meta name="author" content="José Carlos Cantero">
+
+    <title>Actividad 03 | Juego de Piedra Papel Tijeras Lagarto Spock</title>
+
+    <link rel="shortcut icon" href="imagenes/icon.png"/>
+  
+    <link href="ficheros/estilo.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header> <h1 >Piedra Papel Tijeras Lagarto Spock</h1> </header>
+   
+    <div class="general">
+        <div class="centro">            
+            <div class="top" id="vs">
+                <p>PLAY!</p>
+            </div>
+            <div class="battle">
+                <audio id="tic" src="imagenes/tic.mp3" preload="auto"></audio>
+                <img class="gif" id="victory" src="imagenes/victoria.gif">
+                <!--<video class="gif" id="victory"><source src="imagenes/victoria.webm" type="video/webm"></video>-->
+                <audio id="victmp3" src="imagenes/victoria.mp3" preload="auto"></audio>
+                <img class="gif" id="loss" src="imagenes/loss.gif">
+                <audio id="lossmp3" src="imagenes/loss.mp3" preload="auto"></audio>
+
+                <div class="battleground" id="resultado">
+                    <div class="usuario">
+                        <h2>JUGADOR</h2>
+                        <img id="img-usuario" src="imagenes/jugador.webp">
+                        <p>Puntos: <span id="userScore">0</span></p>
+                    </div>
+                    <div class="pc">
+                        <h2>MAQUINA</h2>
+                        <img id="img-pc" src="imagenes/maquina.webp">
+                        <p>Puntos: <span id="computerScore">0</span></p>   
+                    </div>
+                </div>
+
+                <div class="grupo">
+                    <button id="piedra" type="button">
+                        <img src="imagenes/piedra.webp"/>
+                    </button>
+                    <button id="papel" type="button">
+                        <img src="imagenes/papel.webp"/>
+                    </button>
+                    <button id="tijeras" type="button">
+                        <img src="imagenes/tijeras.webp"/>
+                    </button>
+                    <button id="lagarto" type="button">
+                        <img src="imagenes/lagarto.webp"/>
+                    </button>
+                    <button id="spock" type="button">
+                        <img src="imagenes/spock.webp"/>
+                    </button>
+                </div>
+            </div>
+        </div><!--CENTRO-->
+    </div>
+    <footer><h1>Larga vida y prosperidad</h1></footer>
+    <script src="ficheros/script.js"></script>
+</body>
+
+</html>
