@@ -38,13 +38,23 @@ header, footer{
     filter: drop-shadow(0px 0px 13px rgba(173,255,47,100));
     box-shadow: 0px 0px 13px rgba(173,255,47,100);
 }
-header{
+header
+{
     border-bottom: 0.1px solid rgb(173, 255, 47);
     border-radius: 0px 0px 20px 20px;
 }
-footer{
+footer
+{
     border-top: 0.1px solid rgb(173, 255, 47);
     border-radius: 20px 20px 0px 0px;
+}
+footer button
+{
+    background-color: black;
+    color: greenyellow;
+    font-size: clamp(7px, 2vw, 18px);
+    border-radius: 20px;
+    padding: 1%;
 }
 .general
 {
@@ -144,9 +154,15 @@ footer{
 {
     transform: rotate(720deg);
     transition: 3s;
-    -webkit-animation: tiembla 0.01s infinite; /*si el navegador no tiene motor webkit hará el transform rotate*/
+    animation: tiembla 0.01s infinite; /*si el navegador no tiene motor webkit hará el transform rotate*/
 }
 
+button:disabled
+{
+    opacity: 60%;
+    cursor: not-allowed;
+    animation: paused;
+}
 @keyframes pulso {
 from {
     transform: scale(1); /* Estado inicial, tamaño normal */
@@ -155,11 +171,11 @@ from {
     transform: scale(0.75); /* Estado final, aumenta el tamaño */
   }
 }
-  @-webkit-keyframes tiembla{
+@-webkit-keyframes tiembla{
     0%  { -webkit-transform:rotateZ(-5deg); }
     50% { -webkit-transform:rotateZ( 0deg) scale(1); }
     100%{ -webkit-transform:rotateZ( 5deg); }
-  }
+}
   
 
 /*************************** TAMAÑO TABLET ***********************************/
