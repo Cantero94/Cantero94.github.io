@@ -223,4 +223,8 @@ from {
         max-width: 60%;
  
     }
+    footer h2
+    {
+        display: none;
+    }
 }
