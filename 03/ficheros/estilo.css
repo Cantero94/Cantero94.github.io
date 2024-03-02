@@ -131,7 +131,6 @@ footer{
     max-width: 30%;
     background-color: transparent;
     animation: pulso 2s infinite alternate; /*Llama a pulso y le dice que se ejecute durante 2 segundos en un loop infinito*/
-    background-color: none;
     border: none;
     margin: 5px;
 }
