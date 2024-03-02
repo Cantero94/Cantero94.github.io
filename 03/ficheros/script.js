@@ -112,13 +112,16 @@ function play(userOption) {
         switch (result) {
             case EMPATE:
                 vsText.innerHTML = "Empate!";
+                document.getElementById('tied').play();
                 break;
             case VICTORIA:
                 vsText.innerHTML = "Ganaste!";
                 userScore++;
+                document.getElementById('coin').play();
                 break;
             case DERROTA:
                 vsText.innerHTML = "Perdiste!";
+                document.getElementById('doh').play();
                 computerScore++;
                 break;
         }
