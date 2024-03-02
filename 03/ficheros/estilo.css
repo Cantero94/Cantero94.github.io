@@ -41,13 +41,13 @@ header, footer{
 header
 {
     border-bottom: 0.1px solid rgb(173, 255, 47);
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0px 0px 60px 60px;
     padding:2px;
 }
 footer
 {
     border-top: 0.1px solid rgb(173, 255, 47);
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 60px 60px 0px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
