@@ -186,12 +186,16 @@ from {
     }
     .battleground
     {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .battleground img
     {
         max-width: 33vw;
         max-height: 33vh;
+    }
+    .usuario
+    {
+        border-top: 3px dotted greenyellow;
     }
     .grupo
     {
