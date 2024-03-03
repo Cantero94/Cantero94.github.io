@@ -211,7 +211,7 @@ from {
     }
     .grupo
     {
-        background-size: 100% 100%;
+        background-image: url("/03/imagenes/background-movil.webp");
     }
     .grupo button
     {
