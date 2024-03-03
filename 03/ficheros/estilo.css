@@ -122,10 +122,10 @@ footer button
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-image:url('../imagenes/tablon1.webp');
+   /*background-image:url('../imagenes/tablon1.webp');
     background-size: 90% 90%; 
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center;*/
     text-align: center;
     justify-content: center;
     border-top: 3px solid greenyellow;
@@ -208,11 +208,6 @@ from {
     .usuario
     {
         border-top: 3px dotted greenyellow;
-    }
-    .grupo
-    {
-        background-image: url("/03/imagenes/background-movil.webp");
-        background-size: 70%;
     }
     .grupo button
     {
