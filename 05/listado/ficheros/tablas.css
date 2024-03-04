@@ -1,0 +1,192 @@
+/*************************** MONITOR  GRANDE ***********************************/
+/*************************** MONITOR  GRANDE ***********************************/
+/*************************** MONITOR  GRANDE ***********************************/
+/*************************** MONITOR  GRANDE ***********************************/
+
+table
+{
+   width: 80%;
+   border:0px solid red;
+   margin: auto;
+   margin-top:10px;
+}
+
+table th, table td
+{ 
+  vertical-align: middle;
+  padding: 10px;
+  border: 1px solid blue;
+  font-family: calibri;
+  font-size: 18px;
+}
+
+
+table th
+{
+  text-align: left;
+  background-color: powderblue; 
+  color: mediumblue;
+}
+
+table td
+{
+ height: 55px;
+}
+
+table td:nth-child(1),
+table th:nth-child(1)
+{
+  text-align: center;
+  background-color: lemonchiffon;
+  color: black;
+  width:15%;
+}
+
+table td:nth-child(2),
+table th:nth-child(2)
+{
+  text-align: left;
+  /*background-color: lightgreen; */
+  color: black;
+   width:30%;
+}
+
+table td:nth-child(3),
+table th:nth-child(3)
+{
+  text-align: center;
+  /*background-color: lightblue;*/
+  color: black;
+  width:20%;
+}
+
+table td:nth-child(4),
+table th:nth-child(4)
+{
+  text-align: right;
+  /*background-color: lightpink;*/
+  color: black;
+  width:15%;
+}
+
+table td:nth-child(5),
+table th:nth-child(5)
+{
+  text-align: center;
+  /*background-color: lightpink;*/
+  color: blue;
+  width:5%;
+}
+table td:nth-child(6),
+table th:nth-child(6)
+{
+  text-align: center;
+  /*background-color: lightpink;*/
+  color: blue;
+  width:5%;
+}
+
+#pongotabla
+{
+	overflow: auto;
+	border: solid 1px green;
+	padding-bottom:10px;
+	width:100%;
+}
+
+#nelementos
+{
+	font-family: calibri;
+	font-size: 20px;
+	color:red;
+	font-weight:bold;
+}
+
+#adorno
+{
+	text-align: center;
+	font-family: calibri;
+	font-size: 20px;
+	color:black;
+	font-weight:bold;
+}
+
+#papelera
+{
+	cursor:pointer;
+	width:30px;
+	height:30px;
+	vertical-align:middle;
+}
+
+#marca
+{
+	cursor:pointer;
+}
+
+/**************************** TAMAÑO TABLET ************************************/
+/**************************** TAMAÑO TABLET ************************************/
+/**************************** TAMAÑO TABLET ************************************/
+/**************************** TAMAÑO TABLET ************************************/
+
+
+
+
+/**************************** TAMAÑO MÓVIL ************************************/
+/**************************** TAMAÑO MÓVIL ************************************/
+/**************************** TAMAÑO MÓVIL ************************************/
+/**************************** TAMAÑO MÓVIL ************************************/
+@media (max-width: 768px)
+{
+	  table
+	  {
+		   width: 100%;
+		   margin:0px;
+	  }	
+	  
+	  tr
+	  { 
+		display: flex; 
+		flex-direction: row;
+		/* esta propiedad es para que los hijos flex se puedan separar en filas distintas */
+		flex-wrap: wrap;
+		
+		justify-content: center;
+		align-items: center;
+
+		/* espacio entre registro y registro */
+		margin: 10px; 
+	  }
+	  
+	 td,th
+	 {
+		/* flex-grow: como crecen */
+		/* flex-shrink: encogimiento */
+		/* muy importante: probar a quitar el siguiente */
+		/* flex-basis: define el tamaño predeterminado de un elemento antes de que se distribuya el espacio restante */ 
+		flex: 1 1 150px;
+	}
+
+	table th:nth-child(n)
+	{
+		text-align: center;
+		vertical-align:  middle;
+	}
+ 
+	 table td
+	{
+	   display: flex;
+	   flex-direction:column;
+	   height: 55px;
+	   	justify-content: center;
+		align-items: center;
+	}
+
+	table  tr
+	{
+		background-color: PaleTurquoise;
+	}
+
+
+}
+

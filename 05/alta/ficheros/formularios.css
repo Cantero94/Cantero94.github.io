@@ -1,0 +1,244 @@
+/*************************** MONITOR  GRANDE ***********************************/
+/*************************** MONITOR  GRANDE ***********************************/
+/*************************** MONITOR  GRANDE ***********************************/
+/*************************** MONITOR  GRANDE ***********************************/
+.contenedor-formulario
+{
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	margin:20px;
+		
+	border: solid 1px blue;   
+	font-family: Arial, Helvetica;
+ }
+ 
+ .form-group
+{
+   display: flex;
+   flex-direction: row;
+   border: 0px solid orange;
+}
+ 
+ .form-group label
+{
+	width: 100px;
+	height: 25px;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: right;
+	margin-top: 6px;
+	border: solid 0px red;
+}
+
+.form-group .input-control
+{
+	margin-bottom: 10px;
+	margin-right: 8px;
+	margin-left: 3px;
+	height: 25px;
+	
+	font-family: Helvetica;
+	font-size: 16px;
+	text-transform: uppercase;  
+}
+
+/* iframe */
+#mensaje
+{
+	overflow: auto;
+	border:1px solid blue;
+	width:300px;
+	height:30px;
+	margin-top:25px;
+	padding-top:0px;
+	border-radius: 8px;
+}
+
+.input-control
+{
+	text-transform: uppercase;  
+}
+
+
+.input-control:focus
+{
+	background-color:#F6CEF5;
+}
+ 
+
+.boton
+{
+  background-color: DodgerBlue; 
+  border: none; 
+  color: white; 
+  padding: 15px;
+  margin-top:10px;
+  margin-right:10px;
+  margin-left:5px;
+  font-size: 16px; 
+  cursor: pointer; 
+  /* redondeado */
+  border-radius: 8px;
+}
+
+.boton:hover
+{
+  background-color: RoyalBlue;
+}
+
+.boton:disabled 
+{
+  background-color: red;
+  cursor: not-allowed;
+}
+
+.leyenda
+ {
+ 	font-weight: bold;
+	font-size: 22px;
+	font-family: Helvetica;
+	color: brown;
+ }
+ 
+#img1
+{
+	width: 80px;
+	height: 80px;
+	border: 1px solid blue;
+	 margin-left:105px;
+	 margin-bottom:3px;
+ }
+ 
+#criterio1
+{
+	cursor:pointer;
+	font-size: 18px;
+	font-family: calibri;
+	width:100px;
+}
+
+#provincia
+{
+	cursor:pointer;
+	width:150px;
+	height:31px;
+	margin-bottom:8px;
+}
+
+#imagen
+{
+	padding-bottom: 10px; 	
+} 
+
+#fecha
+{
+	cursor:pointer;
+}
+
+#c1
+{
+	margin-right:3px;
+}
+/**************************** TAMAÑO TABLET ************************************/
+/**************************** TAMAÑO TABLET ************************************/
+/**************************** TAMAÑO TABLET ************************************/
+/**************************** TAMAÑO TABLET ************************************/
+@media (max-width: 1000px)
+{
+	
+.contenedor-formulario
+{
+	border: solid 1px green;
+	margin:20px;	
+}
+
+.form-group .input-control
+{
+	font-size: 16px; 
+	/*background-color: yellow;*/
+}
+
+.form-group label
+{
+	text-align: right;
+	font-size: 16px; 
+}   
+
+}
+/**************************** TAMAÑO MÓVIL ************************************/
+/**************************** TAMAÑO MÓVIL ************************************/
+/**************************** TAMAÑO MÓVIL ************************************/
+/**************************** TAMAÑO MÓVIL ************************************/
+@media (max-width: 780px)
+{
+	
+.contenedor-formulario
+{
+	border: solid 1px fuchsia;   
+	padding: 20px;
+	margin:0px;
+	width:90%;
+}
+
+.form-group
+ {
+	 flex-direction: column;
+ }
+		   
+.form-group .input-control
+{
+	margin-left: 0px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+	min-width: 100%;
+	font-size: 14px; 
+	background-color: initial;
+}
+
+.form-group label
+{
+	text-align: left;
+	margin-top: 0px;
+	height: 15px;
+	font-size: 14px; 
+	font-weight: normal;
+}   
+
+.input-control:focus
+{
+	  background-color:#F6CEF5;
+}
+
+.boton
+{
+  margin-right:0px;
+  margin-left:0px;
+  font-size: 14px; 
+}
+
+#img1
+{
+	 margin-left:0px;
+ }
+
+#provincia
+{
+	 margin-top:6px;
+}
+
+.contenedor-formulario
+{
+	margin:10px 0px 10px 0px;
+}
+
+#mensaje
+{
+	width:100%;
+	margin-top:10px;
+	padding-top:0px;
+}
+}
+
+ 

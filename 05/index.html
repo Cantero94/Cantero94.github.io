@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		
+		<meta name="description" content="Ejemplo Menú Aplicación">
+		<meta name="author" content="Jorge López">
+
+		<link rel="shortcut icon" href="imagenes/icon.png"/>
+
+		<title>Menú</title>
+
+		<!-- estilo de "menú" -->
+		<link href="ficheros/estilo_menu.css" rel="stylesheet">
+		
+		<!-- biblioteca de "iconos" -->
+		<link href="ficheros/all.css" rel="stylesheet">
+</head>
+
+
+<!-- este código se ejecuta antes de cargar la página -->
+<script type="text/javascript">
+// variables globales
+var opcion_resaltada=-1;
+
+//*****************************************************************
+//                      para resaltar de otro color las opciones de menú 
+//*****************************************************************
+
+// para configurar color "azul" para la opción que está en este momento seleccionada
+// y para restaurar a "blanco" la que estaba seleccionada antes
+function resalto(opcion)
+{
+	if (opcion!=opcion_resaltada)
+	{
+		// javascript
+		document.getElementById(opcion).style.color="aqua";
+		if (opcion_resaltada>0) {document.getElementById(opcion_resaltada).style.color= "white"};
+		// jQuery
+		// $("#"+opcion).css({"color": "aqua"});
+		// $("#"+opcion_resaltada).css({"color": "white"});
+		opcion_resaltada=opcion;
+	}
+}
+
+// configurar color cuando el ratón pasa por encima de una opción del menú
+// no cambiará color si el cursor del ratón pasa por encima de una opción que actualmente está seleccionada
+function resalto2(opcion)
+{
+	if (opcion!=opcion_resaltada)
+	{
+		// javascript
+		document.getElementById(opcion).style.color="#F7DC6F";
+	}
+}
+
+// configurar color cuando el ratón abandona una opción del menú
+// no cambiará color si el cursor del ratón abandona una opción que actualmente está seleccionada
+function resalto3(opcion)
+{
+	if (opcion!=opcion_resaltada)
+	{
+		// javascript
+		document.getElementById(opcion).style.color="white";
+	}
+}
+//*****************************************************************
+//                                              gestión imágenes menú inicio 
+//*****************************************************************
+
+// se ejecuta al pasar el ratón por encima de la imagen
+function cambio_imagen1(objeto,nimagen)
+{
+	// cambio imagen
+	document.getElementById(objeto).src=nimagen;
+}
+// se ejecuta cuando el ratón abandona la imagen
+function cambio_imagen2(objeto,nimagen)
+{
+   	document.getElementById(objeto).src=nimagen;
+}
+
+//*****************************************************************
+//*****************************************************************
+function inicio()
+{
+}
+//*****************************************************************
+//*****************************************************************
+
+</script>
+
+<body id="body" onload="resalto(1);">
+<!-- **************************** CABECERA ************************************************ -->
+<!-- **************************** CABECERA ************************************************ -->
+<header>
+
+<div class="BarraNavegar">
+		<!-- Imagen de la barra -->
+		<div id="cabecera">
+				<i class="fas fa-users fa-2x"></i>
+				<label  class="L1">Base Datos 1ºDAW&nbsp </label>		
+				<label  class="L2"><b>Menú</b></label>		
+		</div>
+		<!-- icono -->
+		<div class="Opcion_menu_icono">
+				<i class="fas fa-bars fa-lg"></i>
+		</div>			
+		
+		<!-- alineados a la izquierda -->
+		<nav class="Grupo_opciones">
+					<label id="1" class="label"
+					 onclick="resalto(1);location.reload();"
+					 onmousemove="resalto2(1);"
+					 onmouseout="resalto3(1);">Inicio</label>
+					 
+					<label id="2" class="label"
+					onclick="resalto(2); window.open('alta/alta.php','_parent');"
+					 onmousemove="resalto2(2);"
+					 onmouseout="resalto3(2);">Alta</label>
+
+					<label id="3" class="label"
+					 onclick="resalto(3); window.open('consulta/consulta.php','_parent');"
+					 onmousemove="resalto2(3);"
+					 onmouseout="resalto3(3);"							
+					>Consulta/Baja</label>
+
+					<label id="4" class="label"
+					 onclick="resalto(4); window.open('listado/listado.php','_parent');"
+					 onmousemove="resalto2(4);"
+					 onmouseout="resalto3(4);"							
+					>Listados</label>
+
+					<label id="5" class="label"
+					 onclick="resalto(5); 
+					 onmouseout="resalto3(5);"							
+					>Consulta</label>
+		</nav>
+
+		<!-- alineados a la derecha -->
+		<nav class="Grupo_opciones Grupo_opciones_derecha">
+					<label class="label2">Login</label>
+		</nav>
+  
+</div>
+</header>
+<!-- **************************** CUERPO ************************************************ -->
+<!-- **************************** CUERPO ************************************************ -->
+<div id="contenedor" class="contenedor">
+		<div id="cajapagina" class="contenedor2">
+						<div class="contenedor3">
+						
+						<img id="L1" src="imagenes/ALTA1.png" 
+						onmouseover="cambio_imagen1('L1','imagenes/ALTA2.png');"
+						onmouseout="cambio_imagen2('L1','imagenes/ALTA1.png');"
+						onclick="resalto(2); window.open('alta/alta.php','_parent');">
+						</img> 
+						
+						<img id="L2" src="imagenes/CON-BAJA1.png" 
+						onmouseover="cambio_imagen1('L2','imagenes/CON-BAJA2.png');"
+						onmouseout="cambio_imagen2('L2','imagenes/CON-BAJA1.png');"
+						onclick="resalto(3); window.open('consulta/consulta.php','_parent');">
+						</img>  
+
+						<img id="L3" src="imagenes/LISTADO1.png" 
+						onmouseover="cambio_imagen1('L3','imagenes/LISTADO2.png');"
+						onmouseout="cambio_imagen2('L3','imagenes/LISTADO1.png');"
+						onclick="resalto(4); window.open('listado/listado.php','_parent');">
+						</img>  
+						
+						<img id="L4" src="imagenes/CONSULTA1.png" 
+						onmouseover="cambio_imagen1('L4','imagenes/CONSULTA2.png');"
+						onmouseout="cambio_imagen2('L4','imagenes/CONSULTA1.png');"
+						onclick="resalto(5);">
+						</img>  			
+						
+						</div>
+		</div>
+</div>
+<!-- **************************** FOOTER ************************************************ -->
+<!-- **************************** FOOTER ************************************************ -->
+<footer class="footer">
+		<img  id="estrella" src="imagenes/estrella.gif"  height="40" width="40" style="visibility:hidden;"/>
+		&nbsp&nbsp<i class="fab fa-php fa-3x" ></i>
+		<label>&nbsp de PHP al Cielo ©2024</label>	
+</footer>
+
+</body>
+</html>
+
+<!-- este código se ejecuta después de cargar la página -->
+<script type="text/javascript">
+//*****************************************************************
+function visualizo_menu()
+{
+	// documentación "toggle" -> https://www.w3schools.com/howto/howto_js_toggle_class.asp
+	
+	// en esta variable (que será una tabla)
+	// estoy almacenando todas las opciones del menú ->"querySelectorAll"
+	var opciones_menu = document.querySelectorAll('.Grupo_opciones');
+	
+	// cuando sólo hay un argumento presente: Alterna el valor de la clase
+	// nav.classList.toggle('Navbar_ToggleShow')
+	// -> si la clase existe -> la elimina y devuelve false (lo oculta)
+	// -> si la clase no existe -> la añade y devuelve true (lo visualiza).	
+	opciones_menu.forEach(nav => {nav.classList.toggle('Navbar_ToggleShow');});
+}
+//*****************************************************************
+// asocio la función "visualizo_menu()" al evento "click" sobre el menú de barra para móviles
+document.querySelector('.Opcion_menu_icono').addEventListener('click', visualizo_menu);
+//*****************************************************************
+</script>
+
+
+

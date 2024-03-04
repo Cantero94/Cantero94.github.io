@@ -1,0 +1,219 @@
+/* TECNOLOGÍA CSS3 */
+/*************************** MONITOR  GRANDE ***********************************/
+/*************************** MONITOR  GRANDE ***********************************/
+/*************************** MONITOR  GRANDE ***********************************/
+/*************************** MONITOR  GRANDE ***********************************/
+*
+{
+	box-sizing: border-box;
+}
+
+body
+  {
+	  display: flex;
+	  flex-direction: column;
+	  margin: 0;
+	  min-height: 100vh;
+  }
+
+header
+{
+	border: solid 0px red;
+}
+
+.BarraNavegar
+{
+	/* alinear elementos horozontalmente */
+	display: flex;
+	background-color: DodgerBlue;
+	/* márgenes interiores de la barra de navegación */
+	padding: 10px;
+	font-family: calibri;
+	font-size: 20px;
+	color: white;	
+	/*font-weight: bold;*/
+	border: solid 0px yellow;
+}
+
+#cabecera
+{
+	display:flex;
+	align-items: end;
+	border: solid 0px yellow;
+}
+
+.Grupo_opciones
+{
+	display:flex;
+	align-items: end;
+	gap: 25px;
+	border: solid 0px orange;
+}
+
+.Grupo_opciones_derecha
+{
+	/* alinea estas opciones de menú a la derecha */
+	margin-left:auto;
+	border: solid 0px red;
+}
+
+.contenedor
+{
+	display: flex;
+	border: solid 0px blue;
+	flex: 1;
+	justify-content: center;
+}
+
+.contenedor2
+{
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	align-items: center;	
+	margin:25px;
+	border: solid 1px red;
+}
+
+.label
+{
+	cursor:pointer;
+}
+
+
+.label2
+{
+	cursor: pointer;
+}
+
+.footer
+{
+	display: flex;
+	/* factor de contracción */
+	/* flex-shrink:0; */
+	background-color: DodgerBlue;
+	height: 75px;
+	/* eje vertical - y */
+	align-items: center;
+	/* eje horizontal - x */
+	justify-content: center;	
+	color: white;
+	font-size: 18px;
+	font-family: calibri;
+	
+	border: solid 0px red;
+}
+
+.L1
+{
+	font-size: 22px;
+	font-family:Calibri;
+	color:white;
+	padding-left: 10px;
+	padding-right: 0px;
+}
+
+.L2
+{
+	font-size: 22px;
+	font-family:Calibri;
+	color:aqua;
+	margin-left: 10px;
+	margin-right: 20px;
+}
+
+#estrella
+{
+	height: 40px;
+	width: 40px;
+	visibility:hidden;
+}
+/**************************** TAMAÑO TABLET ************************************/
+/**************************** TAMAÑO TABLET ************************************/
+/**************************** TAMAÑO TABLET ************************************/
+/**************************** TAMAÑO TABLET ************************************/
+@media (max-width: 1000px)
+{
+		.L2
+		{
+			color: Pink;
+		}
+		
+		.BarraNavegar
+		{
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.Grupo_opciones
+		{
+			margin-top:15px;
+		}
+		
+		.Grupo_opciones_derecha
+		{
+			margin:auto;
+			margin-top: 8px;
+		}	
+		
+}
+/**************************** TAMAÑO MÓVIL ************************************/
+/**************************** TAMAÑO MÓVIL ************************************/
+/**************************** TAMAÑO MÓVIL ************************************/
+/**************************** TAMAÑO MÓVIL ************************************/
+@media only screen and (max-width: 768px)
+{
+		
+		.contenedor2
+		{
+			margin:0px;
+		}
+		
+		.Grupo_opciones,.Grupo_opciones_derecha
+		.BarraNavegar
+		{
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+		}
+
+		.Grupo_opciones_derecha
+		{
+			margin-left:0;
+		}
+
+		.L2
+		{
+			color:yellow;
+		}		
+		
+		.label
+		{
+			display:block;
+			width:100%;
+			text-align: center;
+			border: solid 1px white;
+		}
+		
+		.label:hover
+		{
+			background-color:Navy;
+		}
+		
+		.label2
+		{
+			display:block;
+			width:100%;
+			text-align: center;
+			border: solid 1px white;	
+			background-color:MediumVioletRed;
+			margin-top:5px;
+		}
+		
+		#cabecera
+		{
+			flex-direction: column;
+			align-items: center;
+		}
+		
+}
