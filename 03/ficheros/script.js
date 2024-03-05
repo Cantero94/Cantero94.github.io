@@ -49,7 +49,7 @@ function enableGameButtons() {
     hackBtn.disabled = false;
 }
 
-// Finaliza el juego y muestra el resultado
+// Finaliza el juego y muestra gifs y sonidos
 function endGame(winner) {
     isPlaying = false; // Asegura que el estado del juego indique que ya no se está jugando
     if (winner === 'user') {
@@ -62,11 +62,11 @@ function endGame(winner) {
         document.getElementById('lossmp3').loop = true;
         document.getElementById('lossmp3').play();
     }
-    disableGameButtons();
-    userScore = 0;
+    disableGameButtons(); // Deshabilita los botones y reinica contadores
+    userScore = 0; 
     computerScore = 0;
 
-    setTimeout(function() {
+    setTimeout(function() {  // Vuelve a ocultar los gif, para música, habilita botones y pone a 0  las puntuaciones.
         vicGif.style.display = 'none';
         lossGif.style.display = 'none';
         document.getElementById('victmp3').pause();
@@ -77,39 +77,40 @@ function endGame(winner) {
         userScoreSpan.textContent = userScore;
         computerScoreSpan.textContent = computerScore;
         vsText.innerHTML = originalText;
-    }, winner === 'user' ? 12000 : 6000);
+    }, winner === 'user' ? 12000 : 6000); //Operador ternario, si es jugador le da 12 segundos al gif de victoria, sino muestra el gif de derrota durante 6 segundos
 }
 // Evento de clic para el botón hack
 hackBtn.addEventListener("click", () => {
-    if(isPlaying) return;
-    isPlaying = true; // Evita que el juego continue después de usar el hack
+    if(isPlaying) return; //Evita que la función continue si ya hay un juego en curso
+    isPlaying = true;
     userScore = 6; // Establece la puntuación necesaria para ganar
     endGame('user'); // Finaliza el juego como una victoria para el usuario
 });
 // Función para jugar
 function play(userOption) {
-    if(isPlaying) return;
-    isPlaying = true; // Indica que el juego ha comenzado
-    disableGameButtons(); // Deshabilita los botones mientras se juega
-
-    usuImg.src = "imagenes/" + userOption + ".webp";
-    document.getElementById('tic').loop = true;
-    document.getElementById('tic').play();
+    if(isPlaying) return; //Evita que la función continue si ya hay un juego en curso
+    isPlaying = true;
+    
+    usuImg.src = "imagenes/" + userOption + ".webp"; //Cambia la imagen del jugador por la elección
+    disableGameButtons(); // Deshabilita los botones mientras se la máquina elige resultado
+    
     vsText.innerHTML = "Eligiendo!";
-    var interval = setInterval(function() {
+    var interval = setInterval(function() { //setInterval hace que se repita la función cada 50 milisegundos
         var pcOption = calcpcOpcion();
         pcImg.src = "imagenes/" + pcOption + ".webp";
+        document.getElementById('tic').loop = true;
+        document.getElementById('tic').play();
     }, 50);
 
     setTimeout(function () {
-        clearInterval(interval);
+        clearInterval(interval); //Corta la repetición de interval que cambia la imagen de la máquina
         var pcOption = calcpcOpcion();
         document.getElementById('tic').pause();
         document.getElementById('tic').currentTime = 0;
         pcImg.src = "imagenes/" + pcOption + ".webp";
         var result = calcularResultado(userOption, pcOption);
 
-        switch (result) {
+        switch (result) { //Muestra los resultados de los turnos
             case EMPATE:
                 vsText.innerHTML = "Empate!";
                 document.getElementById('tied').play();
@@ -125,7 +126,7 @@ function play(userOption) {
                 computerScore++;
                 break;
         }
-
+        //Muestra resultado en el marcador
         userScoreSpan.textContent = userScore;
         computerScoreSpan.textContent = computerScore;
 
@@ -135,17 +136,16 @@ function play(userOption) {
             endGame('computer');
         } else {
             isPlaying = false; // Permite iniciar un nuevo juego
-            enableGameButtons(); // Vuelve a habilitar los botones si nadie ha ganado aún
+            enableGameButtons(); // Vuelve a habilitar los botones
         }
     }, 1000); // Tiempo antes de mostrar el resultado y continuar
 }
-// Eventos de clic para las opciones del jugador
-piedraBtn.addEventListener("click", () => { play(PIEDRA); });
-papelBtn.addEventListener("click", () => { play(PAPEL); });
-tijerasBtn.addEventListener("click", () => { play(TIJERAS); });
-lagartoBtn.addEventListener("click", () => { play(LAGARTO); });
-spockBtn.addEventListener("click", () => { play(SPOCK); });
-
+// Si escucha click en uno de los botones ejecuta la función play con la opción del jugador
+piedraBtn.addEventListener("click", function() { play(PIEDRA); });
+papelBtn.addEventListener("click", function() { play(PAPEL); });
+tijerasBtn.addEventListener("click", function() { play(TIJERAS); });
+lagartoBtn.addEventListener("click", function() { play(LAGARTO); });
+spockBtn.addEventListener("click", function() { play(SPOCK); });
 // Genera la elección de la computadora
 function calcpcOpcion() {
     var num = Math.floor(Math.random() * 5);
@@ -158,6 +158,9 @@ function calcpcOpcion() {
     }
 }
 // Calcula el resultado del juego
+/*Uso igualdad exacta ("===") para comparar tipo y valor, aunque en el caso de mi código 
+siempre estas variables se van a comparar con variables del mismo tipo se considera mejor 
+práctica que hacerlo con igualdad abstracta ("==")*/
 function calcularResultado(userOption, pcOption) {
     if (userOption === pcOption) {
         return EMPATE;
