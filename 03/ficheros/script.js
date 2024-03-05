@@ -19,9 +19,6 @@ var hackBtn = document.getElementById("hack");
 var vsText = document.getElementById("vs");
 var usuImg = document.getElementById("img-usuario");
 var pcImg = document.getElementById("img-pc");
-var vicGif = document.getElementById('victory');
-var lossGif = document.getElementById('loss');
-
 var userScoreSpan = document.getElementById('userScore');
 var computerScoreSpan = document.getElementById('computerScore');
 let userScore = 0;
@@ -54,11 +51,11 @@ function endGame(winner) {
     isPlaying = false; // Asegura que el estado del juego indique que ya no se está jugando
     if (winner === 'user') {
         vsText.innerHTML = "¡Has ganado el juego!";
-        vicGif.style.display = 'block';
+        document.getElementById('victory').style.display = 'block';
         document.getElementById('victmp3').play();
     } else if (winner === 'computer') {
         vsText.innerHTML = "Has perdido el juego.";
-        lossGif.style.display = 'block';
+        document.getElementById('loss').style.display = 'block';
         document.getElementById('lossmp3').loop = true;
         document.getElementById('lossmp3').play();
     }
@@ -67,8 +64,8 @@ function endGame(winner) {
     computerScore = 0;
 
     setTimeout(function() {  // Vuelve a ocultar los gif, para música, habilita botones y pone a 0  las puntuaciones.
-        vicGif.style.display = 'none';
-        lossGif.style.display = 'none';
+        document.getElementById('victory').style.display = 'none';
+        document.getElementById('loss').style.display = 'none';
         document.getElementById('victmp3').pause();
         document.getElementById('victmp3').currentTime = 0;
         document.getElementById('lossmp3').pause();
@@ -141,8 +138,11 @@ function play(userOption) {
     }, 1000); // Tiempo antes de mostrar el resultado y continuar
 }
 // Si escucha click en uno de los botones ejecuta la función play con la opción del jugador
-piedraBtn.addEventListener("click", function() { play(PIEDRA); });
-papelBtn.addEventListener("click", function() { play(PAPEL); });
+piedraBtn.addEventListener("click", function() {
+    play(PIEDRA); 
+});
+papelBtn.addEventListener("click", function() { 
+    play(PAPEL); });
 tijerasBtn.addEventListener("click", function() { play(TIJERAS); });
 lagartoBtn.addEventListener("click", function() { play(LAGARTO); });
 spockBtn.addEventListener("click", function() { play(SPOCK); });
@@ -158,9 +158,7 @@ function calcpcOpcion() {
     }
 }
 // Calcula el resultado del juego
-/*Uso igualdad exacta ("===") para comparar tipo y valor, aunque en el caso de mi código 
-siempre estas variables se van a comparar con variables del mismo tipo se considera mejor 
-práctica que hacerlo con igualdad abstracta ("==")*/
+
 function calcularResultado(userOption, pcOption) {
     if (userOption === pcOption) {
         return EMPATE;
@@ -174,3 +172,6 @@ function calcularResultado(userOption, pcOption) {
         return DERROTA;
     }
 }
+/*Uso igualdad exacta ("===") para comparar tipo y valor, aunque en el caso de mi código 
+siempre estas variables se van a comparar con variables del mismo tipo se considera mejor 
+práctica que hacerlo con igualdad abstracta ("==")*/
