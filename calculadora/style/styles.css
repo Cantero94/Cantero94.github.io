@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #666666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000;
+    width: 320px;
+    height: 720px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+}
+
+.history {
+    color: #999;
+    text-align: right;
+    margin-bottom: 5px;
+    font-size: 16px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.display {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.result {
+    align-content: center;
+    width: 100%;
+    min-height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: #1C1C1C;
+    color: #fff;
+    padding-right: 10px;
+    text-align: right;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    font-size: 24px;
+    overflow: hidden;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn:active {
+    background-color: #555;
+}
+
+.operator {
+    background-color: #FF9500;
+}
+
+.equal {
+    background-color: #7B52FF;
+}
+
+.operator:active, .equal:active {
+    background-color: #FFB84D;
+}
+
+.hidden {
+    display: none;
+}
+
+.toggle-btn {
+    background-color: #333;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.toggle-btn img {
+    width: 25px;
+    height: 25px;
+}
