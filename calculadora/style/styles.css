@@ -96,15 +96,15 @@ body {
 }
 
 .operator {
-    background-color: #FF9500;
+    background-color: #1f1f1f;
 }
 
 .equal {
     background-color: #7B52FF;
 }
 
-.operator:active, .equal:active {
-    background-color: #FFB84D;
+.operator:active{
+    background-color: #333;
 }
 
 .hidden {
